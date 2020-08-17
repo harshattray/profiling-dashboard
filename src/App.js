@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/**
+ * @Author: harsha
+ * @Date:   2020-08-16T21:54:49+02:00
+ * @Last modified by:   harsha
+ * @Last modified time: 2020-08-17T15:32:34+02:00
+ */
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Fragment, Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HeaderComponent } from './components/HeaderComponent/HeaderComponent';
+import DataListingComponent from './components/DataListingComponent/DataListingComponent';
+import { LandingPageComponent } from './components/LandingPageComponent/LandingPageComponent';
+
+import GlobalStyle from './styles/GlobalStyles';
+
+class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        <Router>
+          <GlobalStyle />
+          <HeaderComponent />
+          <Route exact path="/" component={LandingPageComponent} />
+          <Route exact path="/comments" component={DataListingComponent} />
+        </Router>
+      </Fragment>
+    );
+  }
 }
 
 export default App;
