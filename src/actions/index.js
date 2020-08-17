@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-08-13T23:12:31+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-08-17T16:21:42+02:00
+ * @Last modified time: 2020-08-17T23:42:42+02:00
  */
 
 import {
@@ -12,6 +12,7 @@ import {
   SET_COMMENTS_DATA,
 } from './types';
 import axios from 'axios';
+import { saveToLocalStorage } from '../helpers/utils';
 
 /**
  * [fetchCommentsData fetch call to get comments data]
@@ -50,7 +51,7 @@ export const initfetchCommentsData = () => {
   };
 };
 
-export const setCommentsData = (data) => async (dispatch, getState) => {
+export const setCommentsData = data => async (dispatch, getState) => {
   dispatch({
     type: SET_COMMENTS_DATA,
     payload: data,

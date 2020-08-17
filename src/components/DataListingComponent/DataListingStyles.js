@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-08-13T12:26:47+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-08-17T14:03:31+02:00
+ * @Last modified time: 2020-08-17T16:38:32+02:00
  */
 
 import styled, { css } from 'styled-components';

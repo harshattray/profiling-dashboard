@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-08-16T21:54:49+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-08-17T15:12:01+02:00
+ * @Last modified time: 2020-08-17T23:40:26+02:00
  */
 
 import React from 'react';
@@ -21,7 +21,10 @@ const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;
 
-const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
+export const store = createStore(
+  reducers,
+  composeEnhancers(applyMiddleware(thunk))
+);
 
 const app = (
   <Provider store={store}>

@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-08-12T21:42:41+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-08-13T12:19:54+02:00
+ * @Last modified time: 2020-08-17T22:48:43+02:00
  */
 
 import styled from 'styled-components';
@@ -12,6 +12,7 @@ export const HeaderContainer = styled.header`
   display: grid;
   grid-template-columns: 10% auto 30%;
   align-items: center;
+  background-color: #ffab2e;
 `;
 
 export const NavContainer = styled.nav`

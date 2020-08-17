@@ -2,11 +2,12 @@
  * @Author: harsha
  * @Date:   2020-08-17T14:22:05+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-08-17T16:15:17+02:00
+ * @Last modified time: 2020-08-17T22:51:56+02:00
  */
-import React, { Fragment } from 'react';
+import React, { Fragment, Profiler } from 'react';
 import { ContentContainer, DataContainer } from './LandingPageStyles';
-import { Statistic, Row, Col, Button, Avatar } from 'antd';
+import { getMetrics } from '../../helpers/utils';
+import { Row, Col, Button, Avatar } from 'antd';
 import { UserOutlined, BarChartOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
@@ -17,26 +18,34 @@ export const LandingPageComponent = () => {
         <DataContainer>
           <Row gutter={16}>
             <Col span={12}>
-              <Avatar
-                style={{ margin: 16 }}
-                size={64}
-                icon={<BarChartOutlined />}
-              />
-              <Button style={{ margin: 16 }} type="primary">
-                Performance Monitoring
-              </Button>
+              <Profiler
+                id="Performance Monitoring Button"
+                onRender={getMetrics}>
+                <Avatar
+                  style={{ margin: 16 }}
+                  size={64}
+                  icon={<BarChartOutlined />}
+                />
+                <Link to="/perf">
+                  <Button style={{ margin: 16 }} type="primary">
+                    Performance Monitoring
+                  </Button>
+                </Link>
+              </Profiler>
             </Col>
             <Col span={12}>
-              <Avatar
-                style={{ margin: 16 }}
-                size={64}
-                icon={<UserOutlined />}
-              />
-              <Link to="/comments">
-                <Button style={{ margin: 16 }} type="primary">
-                  View List
-                </Button>
-              </Link>
+              <Profiler id="View List" onRender={getMetrics}>
+                <Avatar
+                  style={{ margin: 16 }}
+                  size={64}
+                  icon={<UserOutlined />}
+                />
+                <Link to="/comments">
+                  <Button style={{ margin: 16 }} type="primary">
+                    View List
+                  </Button>
+                </Link>
+              </Profiler>
             </Col>
           </Row>
           ,

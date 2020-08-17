@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2020-08-13T23:20:55+02:00
  * @Last modified by:   harsha
- * @Last modified time: 2020-08-17T16:21:30+02:00
+ * @Last modified time: 2020-08-17T20:42:11+02:00
  */
 
 import {
@@ -41,7 +41,7 @@ export default (state = {}, action) => {
     case SET_COMMENTS_DATA:
       return {
         ...state,
-        commentsDetails: action.payload,
+        profilingDetails: action.payload,
       };
     default:
       return state;
